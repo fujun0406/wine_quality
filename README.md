@@ -100,15 +100,36 @@ We can notice that the correlation plot (Figure 6) shows:
 * total_sulfur_dioxide and bonus_sulfur_dioxide have high correlation
 * total_sulfur_dioxide and wine have high correlation
 
-<img src="/image/correlation.png" width="500"/>
+<img src="/image/correlation.png" width="700"/>
 
-<em>Figure 6: The correlation.</em>
+<em>Figure 6: The correlation plot.</em>
 
 ### Preprocessing
+Based on previous analysis, we know data is imblanced for quality class. In order to prevent imblanced data to discard useful information. We resample the data from each quality class for training dataset and process training set and testing set.
 
 ## Building Models
+In this project, we try to use random forest, decision tree and logistic regression to explore this datset because this dataset is high dimensional input. 
 
 ### Model Comparison
+
+#### Random Forest
+
+<img src="/image/rf.png" width="400"/>
+
+<em>Figure 7: The confusion matrix for Random Forest.</em>
+
+#### Decision Tree
+
+<img src="/image/dt.png" width="400"/>
+
+<em>Figure 8: The confusion matrix for Decision Tree.</em>
+
+#### Logistic Regression
+
+<img src="/image/lg.png" width="400"/>
+
+<em>Figure 9: The confusion matrix for Logistic Regression.</em>
+
 ### Variable Selection
 
 ## Result
