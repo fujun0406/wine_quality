@@ -86,6 +86,8 @@ The categorization must occur using the following table:
 | Average           | 5             |
 | Poor              | < 4           |  
 
+<em>Table 2: The classification rule.</em>
+
 Based on the rule, we can see most wine quality label would be good and average in Figure 5.
 
 <img src="/image/quality_label.png" width="500"/>
@@ -111,8 +113,21 @@ Based on previous analysis, we know data is imblanced for quality class. In orde
 In this project, we try to use random forest, decision tree and logistic regression to explore this datset because this dataset is high dimensional input. 
 
 ### Model Comparison
+We use randome forest, decision tree and logistic regression model to fit training dataset and the results of validation dataset show as following. We can see that the performance of Random Forest is better than others. We will employ this method as following.
 
 #### Random Forest
+
+| | precision | recall | f1-score | support |
+| --- | --------- | ------ | -------- | ------- |
+| 0 | 0.90 | 0.98 | 0.94 | 257 |
+| 1 | 0.69 | 0.64 | 0.66 | 229 | 
+| 2 | 0.62 | 0.55 | 0.58 | 264 | 
+| 3 | 0.78 | 0.86 | 0.82 | 272 | 
+| accuracy |  |  | 0.76  | 1022 | 
+| macro avg | 0.75 | 0.76 | 0.75 | 1022 | 
+| weighted avg | 0.75 | 0.76 | 0.75 | 1022 | 
+
+<em>Table 3: The reslut of Random Forest.</em>
 
 <img src="/image/rf.png" width="400"/>
 
@@ -120,17 +135,66 @@ In this project, we try to use random forest, decision tree and logistic regress
 
 #### Decision Tree
 
+| | precision | recall | f1-score | support |
+| --- | --------- | ------ | -------- | ------- |
+| 0 | 0.82 | 0.87 | 0.85 | 257 |
+| 1 | 0.55 | 0.59 | 0.57 | 229 | 
+| 2 | 0.50 | 0.42 | 0.46 | 264 | 
+| 3 | 0.72 | 0.74 | 0.73 | 272 | 
+| accuracy |  |  | 0.66  | 1022 | 
+| macro avg | 0.65 | 0.66 | 0.65 | 1022 | 
+| weighted avg | 0.65 | 0.66 | 0.65 | 1022 | 
+
+<em>Table 4: The reslut of Decision Tree.</em>
+
 <img src="/image/dt.png" width="400"/>
 
 <em>Figure 8: The confusion matrix for Decision Tree.</em>
 
 #### Logistic Regression
 
+| | precision | recall | f1-score | support |
+| --- | --------- | ------ | -------- | ------- |
+| 0 | 0.60 | 0.66 | 0.63 | 257 |
+| 1 | 0.38 | 0.35 | 0.37 | 229 | 
+| 2 | 0.39 | 0.29 | 0.33 | 264 | 
+| 3 | 0.54 | 0.67 | 0.60 | 272 | 
+| accuracy |  |  | 0.50  | 1022 | 
+| macro avg | 0.48 | 0.49 | 0.48 | 1022 | 
+| weighted avg | 0.48 | 0.50 | 0.49 | 1022 | 
+
+<em>Table 5: The reslut of Logistic Regression.</em>
+
 <img src="/image/lg.png" width="400"/>
 
 <em>Figure 9: The confusion matrix for Logistic Regression.</em>
 
 ### Variable Selection
+There are some variables which have high correlation with each other. If we use those vairbles, it may cause multicollinearity. In order to prevent this issue, we use feature importances at first to select variables.
+
+<img src="/image/importance.png" width="600"/>
+
+<em>Figure 10: The importance of variables.</em>
+
+Because the variable of wine has low importance in the model, we decide to remove this feature from the model. The variable of total_sulfur_dioxide have high correlation with free_sulfur_dioxide and bonus_sulfur_dioxide so try to remove this feature from the model to prevent multicolinearity.
+
+After that, we employ selected variables to fit randome forest model again and the result shows as following.
+
+| | precision | recall | f1-score | support |
+| --- | --------- | ------ | -------- | ------- |
+| 0 | 0.89 | 0.98 | 0.93 | 257 |
+| 1 | 0.70 | 0.65 | 0.67 | 229 | 
+| 2 | 0.60 | 0.51 | 0.55 | 264 | 
+| 3 | 0.77 | 0.85 | 0.81 | 272 | 
+| accuracy |  |  | 0.75  | 1022 | 
+| macro avg | 0.74 | 0.75 | 0.74 | 1022 | 
+| weighted avg | 0.74 | 0.75 | 0.74 | 1022 | 
+
+<em>Table 6: The reslut of Random Forest using selected variables.</em>
+
+<img src="/image/rf2.png" width="400"/>
+
+<em>Figure 11: The confusion matrix for Random Forest using selected variables.</em>
 
 ## Result
 
