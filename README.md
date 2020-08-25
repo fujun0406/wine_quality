@@ -24,7 +24,7 @@ We will be using data exploring the quality and physicochemical characteristics 
 In this dataset, we have 13 features in Table 1 which consist of continuous variabls and categorical variables and total samples is 3000. There is no missing values in the dataset.
 
 <table>
-<tr><th>Continuous Variabls </th><th>Categorical Variables</th></tr>
+<tr><th>Variabls </th><th>Variables</th></tr>
 <tr><td>
   
 | Column | Non-Null Count | Dtype |
@@ -51,6 +51,58 @@ In this dataset, we have 13 features in Table 1 which consist of continuous vari
 </td></tr> </table>
 
 <em>Table 1: The attribute for datasets of dataset.</em>
+
+We can get descriptive statistic of quality perspective in Figure 2 which is part of table and based on the description we can know the following characteristics.
+
+* The higher the quality, the higher the average alcohol concentration
+* The chlorides and volatile_acidity are less present and presented smaller standard deviation in wines of higher quality.
+* The free_sulfur_dioxide is higher with higher quality, but their standard deviation decrease with the increase the quality.
+* Higher quality has less fixed_acidity, but the standard deviation slightly increase with the increase the quality.
+* Lower levels of volatile_acids in wines with high quality ratings
+
+<img src="/image/table.JPG" width="820"/>
+
+<em>Figure 2: The descriptive statistic of dataset.</em>
+
+We can see that 75.1% is white wine and 24.9% is red wine in Figure 3.
+
+<img src="/image/wine_proportion.png" width="500"/>
+
+<em>Figure 3: The distribution of wine.</em>
+
+In Figure 4, most wine quality is 5 and 6.
+
+<img src="/image/quality.png" width="500"/>
+
+<em>Figure 4: The distribution of wine quality.</em>
+
+According to the classification rule, wine can be classified to four categories: `excellent`, `good`, `average`, `poor`. 
+The categorization must occur using the following table:
+
+| Quality Category  | Quality Score |
+|-------------------|:-------------:|
+| Excellent         | > 7           |
+| Good              | 6             |
+| Average           | 5             |
+| Poor              | < 4           |  
+
+Based on the rule, we can see most wine quality label would be good and average in Figure 5.
+
+<img src="/image/quality_label.png" width="500"/>
+
+<em>Figure 5: The distribution of wine quality label.</em>
+
+We can notice that the correlation plot (Figure 6) shows:
+
+* alcohol show the postive correlation values with wine quality
+* chlorides, volatile_acidity and density as a negative correlation with wine quality
+* total_sulfur_dioxide and free_sulfur_dioxide have high correlation
+* total_sulfur_dioxide and bonus_sulfur_dioxide have high correlation
+* total_sulfur_dioxide and wine have high correlation
+
+<img src="/image/correlation.png" width="500"/>
+
+<em>Figure 6: The correlation.</em>
 
 ### Preprocessing
 
