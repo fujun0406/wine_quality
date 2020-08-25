@@ -21,6 +21,37 @@ We will be using data exploring the quality and physicochemical characteristics 
 ## Exploratory Data Analysis
 
 ### Data
+In this dataset, we have 13 features in Table 1 which consist of continuous variabls and categorical variables and total samples is 3000. There is no missing values in the dataset.
+
+<table>
+<tr><th>Continuous Variabls </th><th>Categorical Variables</th></tr>
+<tr><td>
+  
+| Column | Non-Null Count | Dtype |
+|--|--|--|
+| quality |                3000 non-null | int64 |
+| wine |                   3000 non-null | object |
+| fixed_acidity |          3000 non-null | float64 |
+| volatile_acidity |       3000 non-null | float64 |
+| citric_acid |            3000 non-null | float64 |
+| residual_sugar |         3000 non-null | float64 |
+| chlorides |              3000 non-null | float64 |
+
+</td><td>
+
+| Column | Non-Null Count | Dtype |
+|--|--|--|
+| free_sulfur_dioxide | 3000 non-null | float64 |
+| total_sulfur_dioxide | 3000 non-null | float64 |
+| density | 3000 non-null | float64 |
+| p_h | 3000 non-null | float64 |
+| sulphates | 3000 non-null | float64 |
+| alcohol | 3000 non-null | float64 |
+
+</td></tr> </table>
+
+<em>Table 1: The attribute for datasets of dataset.</em>
+
 ### Preprocessing
 
 ## Building Models
