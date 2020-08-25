@@ -197,5 +197,25 @@ After that, we employ selected variables to fit randome forest model again and t
 <em>Figure 11: The confusion matrix for Random Forest using selected variables.</em>
 
 ## Result
+In this model we take the features including 'fixed_acidity', 'volatile_acidity', 'citric_acid', 'residual_sugar', 'chlorides', 'free_sulfur_dioxide', 'density', 'p_h', 'sulphates', 'alcohol' and 'bonus_sulfur_dioxide'. We use random forest as our algorithm to construct the model.
+
+We use number to represent quality class (poor: 0, average: 1, good: 2, excellent: 3) The performance of the testing dataset as following, we can see that for classifing average, good and excellent the accuracy is more than 50%. In terms of poor, though wine may be misclassfied, most of them would be average and good.
+
+| | precision | recall | f1-score | support |
+| --- | --------- | ------ | -------- | ------- |
+| 0 | 0.24 | 0.34 | 0.28 | 44 |
+| 1 | 0.67 | 0.66 | 0.66 | 325 | 
+| 2 | 0.61 | 0.55 | 0.58 | 429 | 
+| 3 | 0.56 | 0.63 | 0.60 | 202 | 
+| accuracy |  |  | 0.60  | 1000 | 
+| macro avg | 0.52 | 0.55 | 0.53 | 1000 | 
+| weighted avg | 0.60 | 0.60 | 0.60 | 1000 | 
+
+<em>Table 7: The reslut of Random Forest for testing dataset.</em>
+
+<img src="/image/test.png" width="400"/>
+
+<em>Figure 12: The confusion matrix for Random Forest for testing dataset.</em>
 
 ## Discussion
+In this projerct, we only discuss three machine learning models but it still provides many information about classifying wine quality. Compared with decision tree and logistic regression, random forest is more suitable in this dataset. As far as for future research, we can try deep learing methods to outperform model.
